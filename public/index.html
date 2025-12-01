@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Scraper</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Google Maps Scraper</h1>
+            <p>Find businesses without official websites.</p>
+        </header>
+
+        <section class="controls">
+            <div class="input-group">
+                <input type="text" id="queryInput" placeholder="e.g. Plumbers in Salt Lake City" />
+                <button id="startBtn">Start Scraping</button>
+            </div>
+            <div class="status-bar">
+                <span id="statusText">Ready</span>
+                <span id="progressText"></span>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="table-header">
+                <h2>Live Results</h2>
+                <a id="downloadLink" href="#" class="download-btn hidden">Download CSV</a>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>Website</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody">
+                        <!-- Rows will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="logs-section">
+            <h3>Logs</h3>
+            <div id="logsContainer"></div>
+        </section>
+    </div>
+</body>
+
+</html>
